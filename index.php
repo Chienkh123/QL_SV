@@ -33,7 +33,7 @@
     <div id="nav-footer">
       <div id="nav-footer-heading">
         <div id="nav-footer-avatar"><img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" /></div>
-        <div id="nav-footer-titlebox"><a id="nav-footer-title" target="_blank">Chiến</a><span
+        <div id="nav-footer-titlebox"><a id="nav-footer-title" target="_blank">NV.Chiến</a><span
             id="nav-footer-subtitle">Admin</span></div>
         <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
       </div>
