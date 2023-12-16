@@ -1,5 +1,7 @@
 <?php
-include 'connect.php';
+include ('connect.php');
+include ('./php/navbar.php');
+
 $studentId = $_GET['masv'];
 
 $query = "SELECT  name, lop, email, birthday, phone, sex FROM students WHERE masv = $studentId";

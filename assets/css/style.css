@@ -13,6 +13,7 @@ html, body {
   background: var(--background);
 }
 
+
 #nav-toggle:checked ~ #nav-header {
   width: calc(var(--navbar-width-min) - 16px);
 }
@@ -36,7 +37,7 @@ html, body {
   background: var(--navbar-light-secondary);
   transform: translate(0, 0) rotate(0deg);
 }
-#nav-toggle:checked ~ #nav-content .nav-button span {
+#nav-toggle:checked ~ #nav-content .nav-button a {
   opacity: 0;
   transition: opacity 0.1s;
 }
@@ -201,7 +202,7 @@ label[for=nav-toggle] {
   z-index: 1;
   transition: color 0.2s;
 }
-.nav-button span {
+.nav-button a {
   transition: opacity 1s;
 }
 .nav-button .fas {
@@ -343,5 +344,5 @@ label[for=nav-footer-toggle] {
 }
 #nav-footer-content::-webkit-scrollbar-thumb {
   border-radius: 99px;
-  background-color: #d7caca;
+  background-color: #ffffff;
 }

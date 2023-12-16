@@ -12,7 +12,7 @@
 </head>
 
 <?php
-include 'connect.php';
+include ('connect.php');
 $query = "SELECT * FROM students";
 if (isset($_POST['search'])) {
     $msv = $_POST['noidung'];
