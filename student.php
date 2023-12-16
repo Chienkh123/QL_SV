@@ -41,6 +41,7 @@
 </style>
 
 <body>
+    <?php include 'index.php'; ?>
     <div class="container">
         <div class="row" style="border-bottom: 2px solid #ccc" >
             <div class = "col-md-6">

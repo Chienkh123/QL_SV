@@ -1,5 +1,5 @@
 :root {
-  --background: #bac6d2;
+  --background: #fff;
   --navbar-width: 256px;
   --navbar-width-min: 80px;
   --navbar-dark-primary: #18283b;
@@ -343,5 +343,5 @@ label[for=nav-footer-toggle] {
 }
 #nav-footer-content::-webkit-scrollbar-thumb {
   border-radius: 99px;
-  background-color: #D62929;
+  background-color: #d7caca;
 }
