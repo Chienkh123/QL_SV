@@ -2,7 +2,7 @@
 <div class="sidebar" id="mySidebar">
 <div class="side-header">
     <img src="./assets/images/logo.png" width="120" height="120" alt="Swiss Collection"> 
-    <h5 style="margin-top:10px;">Admin</h5>
+    <h4 style="margin-top:10px;">Admin</h4>
 </div>
 
 <hr style="border:1px solid; background-color:#362f4d; border-color:#3B3131;">
@@ -19,7 +19,7 @@
 </div>
  
 <div id="main">
-    <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
+    <button class="openbtn" onclick="openNav()"><i class="fa fa-home" style="color:#ff5500;"></i></button>
 </div>
 
 

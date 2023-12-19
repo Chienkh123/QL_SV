@@ -188,6 +188,19 @@ function itemDelete(id){
         }
     });
 }
+//edit student data
+function Delete_student(id){
+    $.ajax({
+        url:"./controller/deleteStudentController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('Items Successfully deleted');
+            $('form').trigger('reset');
+            showStudents();
+        }
+    });
+}
 
 
 //delete cart data
