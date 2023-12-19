@@ -72,7 +72,34 @@
     .sidebar a:hover {
       transform: scale(1.3);
     }
-    
+
+
+    /* btn boostrap */
+    .btn-danger:hover{
+      transform: scale(1.1);
+    }
+    .btn-primary:hover{
+      transform: scale(1.1);
+    }
+    .btn-success:hover{
+      transform: scale(1.1);
+    }
+    .btn-info:hover{
+      transform: scale(1.1);
+    }
+    .btn-warning:hover{
+      transform: scale(1.1);
+    }
+    .btn-secondary:hover{
+      transform: scale(1.1);
+    }
+    .btn-light:hover{
+      transform: scale(1.1);
+    }
+    .btn-dark:hover{
+      transform: scale(1.1);
+    }
+
     /* Position and style the close button (top right corner) */
     .sidebar .closebtn {
       position: absolute;

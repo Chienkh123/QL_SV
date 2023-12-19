@@ -2,9 +2,8 @@
 
     include_once "../config/dbconnect.php";
     
-    $id=$_POST['id'];
+    $id=$_POST['record'];
     $query="DELETE FROM students where id='$id'";
-
     $data=mysqli_query($conn,$query);
 
     if($data){

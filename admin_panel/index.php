@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link rel="stylesheet" href="./assets/css/style.css">
         </link>
     </head>
@@ -179,9 +180,20 @@
         echo '<script> alert("Adding Unsuccess")</script>';
     }
     if (isset($_GET['size']) && $_GET['size'] == "success") {
-        echo '<script> alert("Size Successfully Added")</script>';
+        echo '<script>';
+        echo 'Swal.fire({';
+        echo 'title: "Thêm thành công",';
+        echo 'icon: "success"';
+        echo '});';
+        echo '</script>';
     } else if (isset($_GET['size']) && $_GET['size'] == "error") {
-        echo '<script> alert("Adding Unsuccess")</script>';
+        echo '<script>';
+        echo 'Swal.fire({';
+        echo 'icon: "error"';
+        echo 'title: "Thất bại",';
+        echo 'text: "Vui lòng thử lại!"';
+        echo '});';
+        echo '</script>';
     }
     if (isset($_GET['variation']) && $_GET['variation'] == "success") {
         echo '<script> alert("Variation Successfully Added")</script>';

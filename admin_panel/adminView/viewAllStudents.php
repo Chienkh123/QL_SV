@@ -33,10 +33,10 @@
           <td><?= $row["gioitinh"] == 1 ? "Nữ" : ($row['gioitinh'] == 0 ? "Nam" : "Không xác định") ?></td>
           <td><?= $row["sdt"] ?></td>
           <td>
-            <button class="btn btn-primary" style="height:40px" onclick="itemEditForm('<?= $row['id'] ?>')">Sửa</button>
+            <button class="btn btn-primary" style="height:40px;"  onclick="edit_student('<?= $row['id'] ?>')"><i class="bi bi-pencil-square" style="color: aliceblue;"></i></button>
           </td>
           <td>
-            <button class="btn btn-danger" style="height:40px" onclick="Delete_student('<?= $row['id'] ?>')">Xóa</button>
+            <button class="btn btn-danger" style="height:40px" onclick="Delete_student('<?= $row['id'] ?>')"><i class="bi bi-trash3-fill" style="color: aliceblue;"></i></button>
           </td>
         </tr>
     <?php
