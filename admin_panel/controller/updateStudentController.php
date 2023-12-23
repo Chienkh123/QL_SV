@@ -17,9 +17,6 @@ include_once "../config/dbconnect.php";
         email = '$studentEmail',
         ngaysinh = '$studentBirthday',
         sdt = '$studentPhone',
-        gioitinh = '$studentSex' WHERE id = $Id");
-    if($updateQuery)
-    {
-        echo "true";
-    }
+        gioitinh = '$studentSex'
+        WHERE id = $Id");
 ?>

@@ -17,13 +17,13 @@ if ($numberOfRow > 0) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý sinh viên</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
@@ -32,7 +32,7 @@ if ($numberOfRow > 0) {
 <body>
     <div class="container">
         <div class="row" style="border-bottom: 2px solid #ccc">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <h1>Sửa sinh viên</h1>
             </div>
         </div>

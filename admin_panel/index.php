@@ -28,7 +28,7 @@
             <div class="col-sm-3">
                 <div class="card">
                     <i class="fa fa-users d-flex justify-content-between mb-2" style="font-size: 30px; color: #6ad78e;">
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center" style="font-size: 15px;">
                         <p class="mb-0 text-success me-1">+
                             <?php
                             $sql = "SELECT COUNT(*) as count from users where isAdmin = 0";
@@ -130,7 +130,7 @@
             <div class="col-sm-3">
                 <div class="card">
                     <i class="fa fa-graduation-cap d-flex justify-content-between mb-2" style="font-size: 30px; color: #5757ba;">
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center" style="font-size: 15px;">
                         <p class="mb-0 text-success me-1">+
                             <?php
 
@@ -186,6 +186,7 @@
         echo 'icon: "success"';
         echo '});';
         echo '</script>';
+        
     } else if (isset($_GET['size']) && $_GET['size'] == "error") {
         echo '<script>';
         echo 'Swal.fire({';

@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     font-family: var(--bs-font-sans-serif);
-    font-size: 18px;
     color: #636578;
 }
 
@@ -40,18 +39,17 @@
 
   /* The sidebar menu */
   .sidebar {
-      height: 100%; /* 100% Full-height */
-      width: 0; /* 0 width - change this with JavaScript */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Stay on top */
+      height: 100%; 
+      width: 0; 
+      position: fixed; 
+      z-index: 1; 
       top: 0;
       left: 0;
       background-color:#dee2e6 ; 
-      overflow-x: hidden; /* Disable horizontal scroll */
-      padding-top: 60px; /* Place content 60px from the top */
-      transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+      overflow-x: hidden;
+      padding-top: 60px; 
+      transition: 0.5s; 
     }
-    
     /* The sidebar links */
     .sidebar a {
       padding: 8px 8px 8px 32px;
@@ -61,6 +59,7 @@
       display: block;
       transition: 0.3s;
     }
+    
     
     .sidebar .side-header{
           text-align: center;
@@ -113,29 +112,14 @@
     .openbtn {
       font-size: 50px;
       cursor: pointer;
-      padding: 10px 15px;
-      border: none;
-      color: #fff;
-      background-color:#f7d6bb00;
-      border-radius: 100px;
     }
     
     .openbtn:hover {
       color: #ECDAC9;
       transform: scale(1.2);
     }
-    
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
-      transition: margin-left .5s; /* If you want a transition effect */
-      padding: 20px;
-    }
-    
     /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidebar {padding-top: 15px;}
-      .sidebar a {font-size: 18px;}
-    }
+   
 
 /************************** product table styling *********************************/
 
@@ -146,7 +130,6 @@
     box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
     border-radius: 12px 12px 0 0;
     margin-bottom: 50px;
-    
   }
 
   td,
@@ -172,22 +155,14 @@
     background-color: #eeeeee;
   }
 
-
 /************************ login and sign up styling  ******************************/
-
-.card-container.card-account {
-  max-width: 500px;
-  padding: 30px 30px;
+.container, .container-lg, .container-md, .container-sm {
+  max-width: 80%
 }
 
-.btn {
-  font-weight: 700;
-  height: 36px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
+/* .card-container.card-account {
+  max-width: 100%;
+} */
 
 /*
 * Card component

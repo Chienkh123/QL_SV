@@ -21,7 +21,6 @@
     $count = 1;
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
-
     ?>
         <tr>
           <td><?= $row["id"] ?></td>
@@ -33,7 +32,7 @@
           <td><?= $row["gioitinh"] == 1 ? "Nữ" : ($row['gioitinh'] == 0 ? "Nam" : "Không xác định") ?></td>
           <td><?= $row["sdt"] ?></td>
           <td>
-            <button class="btn btn-primary" style="height:40px;"  onclick="edit_student('<?= $row['id'] ?>')"><i class="bi bi-pencil-square" style="color: aliceblue;"></i></button>
+            <button class="btn btn-primary" style="height:40px;" onclick="edit_student('<?= $row['id'] ?>')"><i class="bi bi-pencil-square" style="color: aliceblue;"></i></button>
           </td>
           <td>
             <button class="btn btn-danger" style="height:40px" onclick="Delete_student('<?= $row['id'] ?>')"><i class="bi bi-trash3-fill" style="color: aliceblue;"></i></button>
@@ -44,8 +43,19 @@
       }
     }
     ?>
+    <!--Search-->
+    <div class="row justify-content-end">
+      <div class="col-md-6 mb-3 mt-3">
+        <form method="post" class="d-flex" id="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" name="noidung" placeholder="Tìm kiếm..." style="margin-right: 8px; border-radius: 5px;" aria-label="Search" aria-describedby="search-button">
+            <button class="btn btn-outline-success" type="submit" style="height: 40px;" id="search-button" name="search">Tìm kiếm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
   </table>
-
   <!-- button add -->
   <button type="button" class="btn btn-success" style="height: 40px;" data-toggle="modal" data-target="#myModal">Thêm sinh viên</button>
 
@@ -56,8 +66,9 @@
       <!-- add sinh viên -->
       <div class=" modal-content container">
         <div class="modal-header row" style="border-bottom: 2px solid #ccc">
-            <h4 class="modal-title">Thêm sinh viên</h1>
+          <h4 class="modal-title">Thêm sinh viên</h1>
         </div>
+
         <form action="./controller/addStudentController.php" method="post">
           <div class="row mt-3">
             <div class="col-md-6 mb-3">

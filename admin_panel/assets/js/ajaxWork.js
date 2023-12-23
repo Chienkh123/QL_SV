@@ -218,13 +218,13 @@ function itemDelete(id){
 //edit student data
 function Delete_student(id) {
   Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    title: "Xóa",
+    text: "Bạn có muốn xóa không!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!",
+    confirmButtonText: "OK",
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
@@ -233,8 +233,8 @@ function Delete_student(id) {
         data: { record: id },
         success: function (data) {
           Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
+            title: "Xóa!",
+            text: "Xóa thành công.",
             icon: "success",
           });
           $("form").trigger("reset");
@@ -434,7 +434,7 @@ function update_Student(){
     var email = $('#email').val();
     var ngaysinh = $('#ngaysinh').val();
     var sdt = $('#sdt').val();
-    var gioitinh = $('#gioitinh').val();
+    var gioitinh = $('.gioitinh').val();
     var fd = new FormData();
     fd.append('id', id);
     fd.append('masv', masv);
@@ -454,7 +454,7 @@ function update_Student(){
         success: function(data){
           alert('Update Success.');
           $('form').trigger('reset');
-          showStudent();
+          showStudents();
         }
       });
 }
@@ -464,7 +464,16 @@ function search(id){
         method:"post",
         data:{record:id},
         success:function(data){
-            $('.eachCategoryProducts').html(data);
+            // Clear the existing HTML content
+            $('.eachCategoryProducts').html('');
+
+            if (data === "No matching students found.") {
+                // Handle case when no matching students are found
+                $('.eachCategoryProducts').html('<p>No matching students found.</p>');
+            } else {
+                // Parse the returned HTML content and append it to the container
+                $('.eachCategoryProducts').append($(data));
+            }
         }
     });
 }
