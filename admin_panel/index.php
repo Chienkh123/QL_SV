@@ -154,7 +154,7 @@
                     <h5>
                         <?php
 
-                        $sql = "SELECT * from students";
+                        $sql = "SELECT * from students WHERE masv != 1";
                         $result = $conn->query($sql);
                         $count = 0;
                         if ($result->num_rows > 0) {

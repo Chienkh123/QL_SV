@@ -7,18 +7,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    $sql = "SELECT * FROM users WHERE masv = ? AND password = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $password);
     
-    $checkemail = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email = '$username'"));
-    
-    if ($checkemail == 0) {
-        echo "Email chưa đăng ký";
+    $check = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE masv = '$username' AND password = '$password'"));
+    if ($check == 0) {
+        echo "<script>alert('Thông tin tài khoản và mật khẩu không chính xác.');</script>";
+        echo "<script>window.location.href = 'login.php';</script>";
         exit();
+
     }
 
-    if ($checkemail == 1) {
+    if ($check == 1) {
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             
@@ -27,9 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
                 // Store user information in session
                 $_SESSION['username'] = $username;
-                $_SESSION['first_name'] = $row['first_name'];
-                $_SESSION['last_name'] = $row['last_name'];
+                $_SESSION['name'] = $row['name'];
                 $_SESSION['user_image'] = $row['user_image'];
+                $_SESSION['isAdmin'] = $row['isAdmin'];
+                $_SESSION['masv'] = $row['masv'];
                 
                 // Check if the user is an admin (assuming isAdmin is a column in your users table)
                 if ($row['isAdmin'] == 1) {
@@ -69,15 +71,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-md-6">
                 <form action="login.php" method="post" class="form-control">
                     <h1 class="text-center">Đăng nhập</h1>
-                    <label for="username" class="form-label"><i class="bi bi-person"></i>Email</label>
-                    <input class="form-control" type="email" name="username" placeholder="Email" required><br>
+                    <label for="username" class="form-label"><i class="bi bi-person"></i>Tên người dùng</label>
+                    <input class="form-control" type="text" name="username" placeholder="Username" required><br>
                     <label for="password" class="form-label"><i class="bi bi-lock"></i>Mật khẩu</label>
                     <input class="form-control" type="password" name="password" id="password" placeholder="Password" required><br>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" name="showPassword" id="showPasswordCheckbox">
                         <label class="form-check-label" for="showPasswordCheckbox">Hiển thị mật khẩu</label><br>
                     </div>
-                    <a style="display: flex;justify-content: flex-end;" class="text-decoration-none" href="sign_in.php">Chưa có tài khoản?</a>
+                    <a style="display: flex;justify-content: flex-end;" class="text-decoration-none" href="forget.php">Quên mật khẩu?</a>
                     <input class="btn btn-success form-control" type="submit" value="Đăng nhập">
                 </form>
             </div>

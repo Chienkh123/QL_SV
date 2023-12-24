@@ -5,8 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
-$firstname = $_SESSION['first_name'];
-$lastname = $_SESSION['last_name'];
+$name = $_SESSION['name'];
 $image = $_SESSION['user_image'];
 
 ?>
@@ -24,7 +23,7 @@ $image = $_SESSION['user_image'];
 <div class="sidebar" id="mySidebar">
     <div class="side-header">
         <img class="admin-image" id="admin-image" src="<?php echo $image; ?>" alt="Swiss Collection">
-        <h4 style="margin-top: 10px; font-size: 20px; color: #ff5500;" id="admin-name" class="admin-heading"><?php echo $firstname . " " .  $lastname ?></h4>
+        <h4 style="margin-top: 10px; font-size: 20px; color: #ff5500;" id="admin-name" class="admin-heading"><?php echo $name?></h4>
        
     </div>
 

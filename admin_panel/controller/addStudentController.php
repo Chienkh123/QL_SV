@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gioitinh = $_POST["gioitinh"];
         $sdt = $_POST["sdt"];
 
-        $query =  mysqli_query($conn,"INSERT INTO students (masv, hoten, lop, email, ngaysinh, gioitinh, sdt) VALUES ('$masv', '$hoten', '$lop', '$email', '$ngaysinh', '$gioitinh', '$sdt')");
+        $query = mysqli_query($conn, "INSERT INTO students (masv, hoten, lop, email, ngaysinh, gioitinh, sdt) VALUES ('$masv', '$hoten', '$lop', '$email', '$ngaysinh', '$gioitinh', '$sdt')");
+        $query1 = mysqli_query($conn, "INSERT INTO users (masv, name, email, phone) VALUES ('$masv', '$hoten', '$email','$sdt')");
 
-
-        if (!$query) {
+        if (!$query || !$query1) {
             echo mysqli_error($conn);
             header("Location: ../index.php?size=error");
         } else {

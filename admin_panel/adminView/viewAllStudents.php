@@ -16,14 +16,14 @@
     </thead>
     <?php
     include_once "../config/dbconnect.php";
-    $sql = "SELECT * from students";
+    $sql = "SELECT * from students WHERE masv != 1";
     $result = $conn->query($sql);
     $count = 1;
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
     ?>
         <tr>
-          <td><?= $row["id"] ?></td>
+          <td><?= $count?></td>
           <td><?= $row["masv"] ?></td>
           <td><?= $row["hoten"] ?></td>
           <td><?= $row["lop"] ?></td>
@@ -32,10 +32,10 @@
           <td><?= $row["gioitinh"] == 1 ? "Nữ" : ($row['gioitinh'] == 0 ? "Nam" : "Không xác định") ?></td>
           <td><?= $row["sdt"] ?></td>
           <td>
-            <button class="btn btn-primary" style="height:40px;" onclick="edit_student('<?= $row['id'] ?>')"><i class="bi bi-pencil-square" style="color: aliceblue;"></i></button>
+            <button class="btn btn-primary" style="height:40px;" onclick="edit_student('<?= $row['masv'] ?>')"><i class="bi bi-pencil-square" style="color: aliceblue;"></i></button>
           </td>
           <td>
-            <button class="btn btn-danger" style="height:40px" onclick="Delete_student('<?= $row['id'] ?>')"><i class="bi bi-trash3-fill" style="color: aliceblue;"></i></button>
+            <button class="btn btn-danger" style="height:40px" onclick="Delete_student('<?= $row['masv'] ?>')"><i class="bi bi-trash3-fill" style="color: aliceblue;"></i></button>
           </td>
         </tr>
     <?php

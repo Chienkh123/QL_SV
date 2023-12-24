@@ -246,6 +246,36 @@ function Delete_student(id) {
   });
 }
 
+function Delete_user(id) {
+    Swal.fire({
+      title: "Xóa",
+      text: "Bạn có muốn xóa không!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "OK",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "./controller/deleteUserController.php",
+          method: "post",
+          data: { record: id },
+          success: function (data) {
+            Swal.fire({
+              title: "Xóa!",
+              text: "Xóa thành công.",
+              icon: "success",
+            });
+            $("form").trigger("reset");
+            showCustomers();
+          },
+        });
+      }
+    });
+  }
+  
+
 
 //delete cart data
 function cartDelete(id){

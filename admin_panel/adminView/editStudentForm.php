@@ -2,11 +2,10 @@
 include_once "../config/dbconnect.php";
 
 $Id = $_POST['record'];
-$query = mysqli_query($conn, "SELECT * FROM students WHERE id='$Id'");
+$query = mysqli_query($conn, "SELECT * FROM students WHERE masv = '$Id'");
 $numberOfRow = mysqli_num_rows($query);
 if ($numberOfRow > 0) {
     while ($row = mysqli_fetch_array($query)) {
-        $studentId = $row['masv'];
         $studentName = $row['hoten'];
         $studentLop = $row['lop'];
         $studentEmail = $row['email'];
@@ -38,13 +37,9 @@ if ($numberOfRow > 0) {
         </div>
         <form id="update-Items" onsubmit = "update_Student()" enctype='multipart/form-data'>
             <div class="row mt-3">
-            <div class="col-md-5 mb-3">
-                    <label for="name" class="form-label">ID:</label>
-                    <input type="text" id="id" name="id" class="form-control" value="<?php echo $Id; ?>" readonly>
-                </div>
                 <div class="col-md-5 mb-3">
                     <label for="name" class="form-label">Mã sinh viên:</label>
-                    <input type="text" id="masv" name="masv" class="form-control" value="<?php echo $studentId; ?>" readonly>
+                    <input type="text" id="masv" name="masv" class="form-control" value="<?php echo $Id; ?>" readonly>
                 </div>
 
                 <div class="col-md-5 mb-3">
