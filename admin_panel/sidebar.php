@@ -1,13 +1,16 @@
 <?php
-include "./config/dbconnect.php";
-$query = "SELECT first_name, last_name, user_image FROM users";
-$result = $conn->query($query);
-$row = $result->fetch_assoc();
-$firstname = $row['first_name'];
-$lastname = $row['last_name'];
-$image = $row['user_image'];
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+$firstname = $_SESSION['first_name'];
+$lastname = $_SESSION['last_name'];
+$image = $_SESSION['user_image'];
 
 ?>
+
 <style>
     .admin-image {
         width: 60px;
@@ -21,7 +24,8 @@ $image = $row['user_image'];
 <div class="sidebar" id="mySidebar">
     <div class="side-header">
         <img class="admin-image" id="admin-image" src="<?php echo $image; ?>" alt="Swiss Collection">
-        <h4 style="margin-top: 10px; font-size: 20px; color: #ff5500;" id="admin-name" class="admin-heading"><?php echo $lastname . " " . $firstname ?></h4>
+        <h4 style="margin-top: 10px; font-size: 20px; color: #ff5500;" id="admin-name" class="admin-heading"><?php echo $firstname . " " .  $lastname ?></h4>
+       
     </div>
 
     <hr>
@@ -35,6 +39,10 @@ $image = $row['user_image'];
     <a href="#orders" onclick="showOrders()"><i class="fa fa-list" style="color: #a255ec;"></i><span id="hide-text"> Orders</span></a>
     <a href="#students" onclick="showStudents()"><i class="fa fa-graduation-cap" style="color: #5757ba;"></i><span id="hide-text"> Sinh viên</span></a>
     <!---->
+    <hr>
+    <div class="side-footer">
+        <a href="logout.php"><i class="fa fa-sign-out" style="color: #ff5500;"></i><span id="hide-text"> Đăng xuất</span></a>
+    </div>
 </div>
 <div id="main">
 

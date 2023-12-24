@@ -10,6 +10,7 @@ function showProductItems(){
         }
     });
 }
+
 function showCategory(){  
     $.ajax({
         url:"./adminView/viewCategories.php",

@@ -66,6 +66,10 @@
           margin-bottom: 8px;
           color: #1e1616;
       }
+      .sidebar .side-footer{
+        margin-bottom: 8px;
+        color: #1e1616;
+    }
 
     /* When you mouse over the navigation links, change their color */
     .sidebar a:hover {
