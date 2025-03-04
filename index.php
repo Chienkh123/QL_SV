@@ -148,9 +148,9 @@ $masv = $_SESSION['masv'];
                             <a class="dropdown-item" href="#">Help</a>
                         </li>
                         <div class="dropdown-divider"></div>
+                       <!-- Thêm menu -->
                         <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
+                            <a class="dropdown-item" href="#">Change Password</a>
                         <li>
                             <a class="dropdown-item" href="./admin_panel/logout.php">Logout</a>
                         </li>
