@@ -145,6 +145,13 @@ $masv = $_SESSION['masv'];
                             <a class="dropdown-item" href="#">Profile</a>
                         </li>
                         <li>
+                            <a class="dropdown-item" href="#">Help</a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                        <li>
                             <a class="dropdown-item" href="./admin_panel/logout.php">Logout</a>
                         </li>
                     </ul>
